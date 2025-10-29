@@ -1,0 +1,215 @@
+/* ================================
+   STYLE GLOBAL
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ================================
+   LIEN "PASSER AU CONTENU PRINCIPAL"
+================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #f39c12;
+  color: #000;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ================================
+   EN-TÊTE
+================================ */
+header {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 10%; /* ✅ largeur réduite pour nav descendant */
+}
+
+h1 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 2em;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+nav {
+  background-color: #333;
+  width: 80%; /* ✅ largeur nav */
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* ✅ inline-block */
+  width: 100%;
+}
+
+nav li {
+  display: inline-block; /* ✅ remplacer flex */
+  width: 150px;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 12px 0;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #f39c12;
+  color: #000;
+}
+
+/* ================================
+   CONTENU PRINCIPAL
+================================ */
+main {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* ================================
+   GRILLE DE BIENS / VOITURES
+================================ */
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(2, 40%); /* ✅ grille 2 colonnes */
+  justify-content: space-between;        /* ✅ espacement entre colonnes */
+  row-gap: 25px;                         /* ✅ espacement entre lignes */
+  margin-top: 30px;
+}
+
+.car {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.catalogue img {
+  width: 100%; /* ✅ largeur 100% pour images dans la grille */
+  border-radius: 8px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.car h3 {
+  color: #1e1e1e;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e67e22;
+}
+
+/* ================================
+   PIED DE PAGE
+================================ */
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+  font-size: 0.9em;
+}
+
+footer strong {
+  color: #f39c12;
+}
+
+/* ================================
+   FLEX (pour sections secondaires)
+================================ */
+.flex {
+  display: flex;
+  flex-wrap: wrap;              /* ✅ permettre plusieurs lignes */
+  justify-content: space-around; /* ✅ espacement horizontal */
+  gap: 20px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .catalogue {
+    grid-template-columns: 1fr; /* ✅ une seule colonne sur mobile */
+  }
+
+  nav li {
+    display: block;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
